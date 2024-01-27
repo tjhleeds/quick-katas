@@ -1,0 +1,32 @@
+name: Update Docs Index
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'docs/**'
+
+jobs:
+  update-docs-index:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Generate Docs Index
+      run: |
+        cd docs || exit
+        echo -e "# Table of Contents\n" > index.md
+        for file in $(ls -1 *.md | sort -r); do
+          echo "- [$(basename "$file" .md)]($file)" >> index.md
+        done
+
+    - name: Commit and Push Changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add docs/index.md
+        git commit -m "Update docs index [skip ci]"
+        git push
