@@ -32,4 +32,4 @@ jobs:
         git commit -m "Update docs index [skip ci]"
 
     - name: Push Changes to PR Branch
-      run: git push origin ${{ github.head_ref }}:${{ github.head_ref }} --force
+      run: git push origin ${{ github.head_ref }}
