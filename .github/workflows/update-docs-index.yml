@@ -2,7 +2,7 @@ name: Update Docs Index
 
 on:
   workflow_dispatch:
-  push:
+  pull_request:
     branches:
       - main
     paths:
@@ -23,11 +23,13 @@ jobs:
         for file in $(ls -1 *.md | sort -r); do
           echo "- [$(basename "$file" .md)]($file)" >> index.md
         done
-
-    - name: Commit and Push Changes
+    
+    - name: Commit Changes
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add docs/index.md
         git commit -m "Update docs index [skip ci]"
-        git push
+
+    - name: Push Changes to PR Branch
+      run: git push origin ${{ github.head_ref }}:${{ github.head_ref }} --force
