@@ -1,6 +1,7 @@
 name: Update Docs Index
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
