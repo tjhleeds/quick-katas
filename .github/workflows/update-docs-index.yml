@@ -20,9 +20,9 @@ jobs:
       run: |
         cd docs || exit
         echo -e "# Table of Contents\n" > index.md
-        for file in $(ls -1 *.md | sort -r); do
+        for file in $(ls -1 *.md | grep -v '^index\.md$' | sort -r); do
           echo "- [$(basename "$file" .md)]($file)" >> index.md
-        done
+        done    
     
     - name: Commit Changes
       run: |
