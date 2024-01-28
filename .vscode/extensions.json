@@ -8,7 +8,8 @@
 		"ms-dotnettools.vscodeintellicode-csharp",
 		"ms-dotnettools.csharp",
 		"ms-dotnettools.vscode-dotnet-runtime",
-		"davidanson.vscode-markdownlint"
+		"davidanson.vscode-markdownlint",
+		"github.vscode-github-actions"
 		
 	],
 	// List of extensions recommended by VS Code that should not be recommended for users of this workspace.
