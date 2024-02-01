@@ -2,6 +2,8 @@
 
 A repository for sharing my own attempt at katas, for the sake of my own learning.
 
+Notes deployed to https://tjhleeds.github.io/quick-katas/
+
 ## Note about PRs
 
 There is a Github Action configured to create an index page for the docs folder, which runs when a PR is created/updated. It adds a commit to that PR, so if you want to add further commits to the PR you need to pull that commit first.
