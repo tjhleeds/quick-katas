@@ -4,6 +4,16 @@ A repository for sharing my own attempt at katas, for the sake of my own learnin
 
 Notes deployed to https://tjhleeds.github.io/quick-katas/
 
+## Process
+
+1. Create a branch with today's date.
+1. Add a markdown file with today's date to the `docs` folder.
+1. Specify your aim and the timebox you are working to.
+1. Start a timer.
+1. Make changes and add to your docs until the timer goes off.
+1. Commit everything and push to the server.
+1. Create a PR into `main` branch.
+
 ## Running Tests
 
 - When using GitHub Codespaces, the tests don't show up by default when you load the Codespace.
