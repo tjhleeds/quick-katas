@@ -2,7 +2,7 @@
 
 A repository for sharing my own attempt at katas, for the sake of my own learning.
 
-Notes deployed to https://tjhleeds.github.io/quick-katas/
+Notes deployed to <https://tjhleeds.github.io/quick-katas/>
 
 ## Process
 
