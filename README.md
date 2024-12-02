@@ -17,7 +17,10 @@ Notes deployed to https://tjhleeds.github.io/quick-katas/
 ## Running Tests
 
 - When using GitHub Codespaces, the tests don't show up by default when you load the Codespace.
-- To make them show, type CTRL+SHIFT+P and run `.NET: Rebuild`. This should cause the tests extension to discover the tests.
+- To make them show:
+  - Install recommended extensions.
+  - Type CTRL+SHIFT+P and run `.NET: Rebuild`.
+  - This should cause the tests extension to discover the tests.
 
 ## Note about PRs
 
