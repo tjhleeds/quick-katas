@@ -5,7 +5,7 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <GenerateProgramFile>false</GenerateProgramFile>
     <AssemblyTitle>csharp</AssemblyTitle>
-    <Product>Gilded Rose Kata</Product>
+    <Product>csharp</Product>
     <Copyright>Copyright ©  2017</Copyright>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <FileVersion>1.0.0.0</FileVersion>
