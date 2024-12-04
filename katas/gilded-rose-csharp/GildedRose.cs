@@ -4,6 +4,8 @@ namespace csharp
 {
     public class GildedRose
     {
+        private const string Sulfuras = "Sulfuras, Hand of Ragnaros";
+
         IList<Item> Items;
         public GildedRose(IList<Item> Items)
         {
@@ -20,6 +22,11 @@ namespace csharp
 
         private void UpdateItem(Item item)
         {
+            if (item.Name == Sulfuras)
+            {
+                return;
+            }
+
             if (item.Name != "Aged Brie" && item.Name != "Backstage passes to a TAFKAL80ETC concert")
             {
                 if (item.Quality > 0)
