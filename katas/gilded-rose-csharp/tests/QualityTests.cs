@@ -5,10 +5,10 @@ using NUnit.Framework;
 namespace csharp.tests;
 
 public class QualityTests {
-    [Theory]
+    [Test]
     [TestCase(10, 1, 9)]
     [TestCase(10, 7, 3)]
-    [TestCase(3, 6, -3)]
+    [TestCase(3, 3, 0)]
     public void SellInPositive_DecreaseByOneEachDay(int startQuality, int days, int expectedQuality)
     {
         IList<Item> Items = new List<Item> { new Item { Name = "foo", SellIn = 10, Quality = startQuality } };
@@ -21,7 +21,7 @@ public class QualityTests {
         Assert.AreEqual(expectedQuality, Items[0].Quality);
     }
 
-    [Theory]
+    [Test]
     [TestCase(1, 10, 1, 9)]
     [TestCase(0, 10, 7, 3)]
     [TestCase(-1, 0, 6, -12)]
@@ -36,5 +36,25 @@ public class QualityTests {
         }
 
         Assert.AreEqual(expectedQuality, Items[0].Quality);
+    }
+
+    [Test]
+    public void ZeroQuality_QualityDoesNotGoNegative()
+    {
+        var items = new List<Item>
+        { 
+            new Item 
+            { 
+                Name = "foo", 
+                SellIn = 10, 
+                Quality = 0 
+            } 
+        };
+
+        var app = new GildedRose(items);
+
+        app.UpdateQuality();
+
+        Assert.AreEqual(0, items[0].Quality);
     }
 }
