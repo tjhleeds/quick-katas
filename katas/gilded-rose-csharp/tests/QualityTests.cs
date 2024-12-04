@@ -57,4 +57,44 @@ public class QualityTests {
 
         Assert.AreEqual(0, items[0].Quality);
     }
+
+    [Test]
+    public void AgedBrie_IncreasesInQuality()
+    {
+        var items = new List<Item>
+        { 
+            new Item 
+            { 
+                Name = "Aged Brie", 
+                SellIn = 10, 
+                Quality = 10 
+            } 
+        };
+
+        var app = new GildedRose(items);
+
+        app.UpdateQuality();
+
+        Assert.AreEqual(11, items[0].Quality);
+    }
+
+    [Test]
+    public void QualityIsFifty_QualityNeverExceedsFifty()
+    {
+var items = new List<Item>
+        { 
+            new Item 
+            { 
+                Name = "Aged Brie", 
+                SellIn = 10, 
+                Quality = 50 
+            } 
+        };
+
+        var app = new GildedRose(items);
+
+        app.UpdateQuality();
+
+        Assert.AreEqual(50, items[0].Quality);
+    }
 }
