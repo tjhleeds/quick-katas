@@ -81,7 +81,7 @@ public class QualityTests {
     [Test]
     public void QualityIsFifty_QualityNeverExceedsFifty()
     {
-var items = new List<Item>
+        var items = new List<Item>
         { 
             new Item 
             { 
