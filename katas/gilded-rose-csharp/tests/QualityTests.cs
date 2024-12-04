@@ -117,4 +117,33 @@ public class QualityTests {
 
         Assert.AreEqual(80, items[0].Quality);
     }
+    
+    [Test]
+    [TestCase(100, 30, 31)]
+    [TestCase(11, 30, 31)]
+    [TestCase(10, 30, 32)]
+    [TestCase(9, 30, 32)]
+    [TestCase(6, 30, 32)]
+    [TestCase(5, 30, 33)]
+    [TestCase(4, 30, 33)]
+    [TestCase(1, 30, 33)]
+    [TestCase(0, 30, 0)]
+    public void BackstagePasses_QualityIncreasesBasedOnSellIn(int sellIn, int initialQuality, int expectedQuality)
+    {
+        var items = new List<Item>
+        { 
+            new Item 
+            { 
+                Name = "Backstage passes to a TAFKAL80ETC concert", 
+                SellIn = sellIn, 
+                Quality = initialQuality
+            } 
+        };
+
+        var app = new GildedRose(items);
+
+        app.UpdateQuality();
+
+        Assert.AreEqual(expectedQuality, items[0].Quality);
+    }
 }
