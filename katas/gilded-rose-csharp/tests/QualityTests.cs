@@ -97,4 +97,24 @@ public class QualityTests {
 
         Assert.AreEqual(50, items[0].Quality);
     }
+    
+    [Test]
+    public void Sulfuras_QualityAlwaysEighty()
+    {
+        var items = new List<Item>
+        { 
+            new Item 
+            { 
+                Name = "Sulfuras, Hand of Ragnaros", 
+                SellIn = 10, 
+                Quality = 80 
+            } 
+        };
+
+        var app = new GildedRose(items);
+
+        app.UpdateQuality();
+
+        Assert.AreEqual(80, items[0].Quality);
+    }
 }
